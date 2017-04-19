@@ -34,9 +34,18 @@ public class StaticFactoryMethod {
     public static StaticFactoryMethod createWithParams(int p1, int p2, int p3, int p4) {
         return new StaticFactoryMethod(p1, p2, p3, p4);
     }
-
+    
     @Override
     public String toString(){
         return String.format("%s, %s, %s, %s", p1, p2, p3, p4);
+    }
+
+    public static void main(String[] args) {
+        //create object from static factory method
+        StaticFactoryMethod object = StaticFactoryMethod.create();
+        System.out.println(object.toString());
+
+        object = StaticFactoryMethod.createWithParams(1, 23, 34, 55);
+        System.out.println(object.toString());
     }
 }

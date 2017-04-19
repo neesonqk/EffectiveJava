@@ -48,4 +48,11 @@ public class BuilderMethod {
     public String toString () {
         return String.format("%s, %s, %s, %s", p1, p2, p3, p4);
     }
+
+    public static void main(String[] args) {
+        //Create object from builer nested class
+        BuilderMethod object2 = new BuilderMethod.Builder(10, 20)
+        .setP3(20).setP4(30).build();
+        System.out.println(object2.toString());
+    }
 }
